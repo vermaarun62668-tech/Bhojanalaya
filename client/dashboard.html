@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Bhojanalaya Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Page Under Development</h1>
+
+<div class="dashboard">
+
+    <h1>🍽️ Bhojanalaya</h1>
+
+    <h2 id="welcome">Welcome Student 👋</h2>
+
+    <div class="menu-card">
+
+        <h3>Today's Menu</h3>
+
+        <p><strong>Breakfast:</strong> <span id="breakfast"></span></p>
+
+        <p><strong>Lunch:</strong> <span id="lunch"></span></p>
+
+        <p><strong>Snacks:</strong> <span id="snacks"></span></p>
+
+        <p><strong>Dinner:</strong> <span id="dinner"></span></p>
+
+    </div>
+
+    <div class="actions">
+
+        <a href="rating.html" class="btn">⭐ Rate Food</a>
+
+        <a href="complaint.html" class="btn">📝 Complaint</a>
+
+        <a href="suggestion.html" class="btn">💡 Suggest Menu</a>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/dashboard.js"></script>
+
 </body>
 </html>

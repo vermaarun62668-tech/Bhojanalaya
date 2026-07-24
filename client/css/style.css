@@ -228,3 +228,37 @@ body{
     font-weight:bold;
 
 }
+.dashboard{
+    width:700px;
+    margin:50px auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.dashboard h1{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.dashboard h2{
+    margin-bottom:25px;
+}
+
+.menu-card{
+    background:#f4f4f4;
+    padding:20px;
+    border-radius:10px;
+}
+
+.menu-card p{
+    margin:10px 0;
+}
+
+.actions{
+    margin-top:30px;
+    display:flex;
+    justify-content:space-between;
+}

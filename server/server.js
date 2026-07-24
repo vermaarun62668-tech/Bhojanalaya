@@ -3,16 +3,22 @@ const cors = require("cors");
 require("dotenv").config();
 
 const db = require("./config/db");
+
 const authRoutes = require("./routes/authRoutes");
+const menuRoutes = require("./routes/menuRoutes");
 
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "http://127.0.0.1:5500"
+}));
+
 app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/menu", menuRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
