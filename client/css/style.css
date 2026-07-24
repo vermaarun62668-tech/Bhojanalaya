@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    background:red !important;
+}
+
+body{
+
+    background:#f4f7fb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    width:650px;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0px 5px 20px rgba(0,0,0,0.15);
+
+}
+
+.hero h1{
+
+    font-size:45px;
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+.hero h2{
+
+    color:#444;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    color:#666;
+
+    line-height:28px;
+
+    margin-bottom:35px;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px 35px;
+
+    border-radius:8px;
+
+    transition:0.3s;
+
+    font-weight:bold;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.register{
+
+    background:#16a34a;
+
+}
+
+.register:hover{
+
+    background:#15803d;
+
+}
+.form-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+.form-card{
+
+    background:white;
+
+    width:420px;
+
+    padding:40px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.form-card h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.form-card h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    color:#444;
+
+}
+
+.form-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+.form-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.form-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.form-card p{
+
+    text-align:center;
+
+    margin-top:18px;
+
+}
+
+.form-card a{
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+}
