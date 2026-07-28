@@ -1,3 +1,7 @@
+const adminMenuRoutes = require("./routes/adminMenuRoutes");
+const suggestionRoutes = require("./routes/suggestionRoutes");
+const complaintRoutes = require("./routes/complaintRoutes");
+const ratingRoutes = require("./routes/ratingRoutes");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -19,6 +23,10 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/menu", menuRoutes);
+app.use("/api/ratings", ratingRoutes);
+app.use("/api/complaints", complaintRoutes);
+app.use("/api/suggestions", suggestionRoutes);
+app.use("/api/admin/menu", adminMenuRoutes);
 
 // Test Route
 app.get("/", (req, res) => {

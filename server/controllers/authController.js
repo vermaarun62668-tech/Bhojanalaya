@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const db = require("../config/db");
 const {
     createStudent,
     findStudentByEmail
@@ -115,7 +116,47 @@ const loginStudent = (req, res) => {
 
 };
 
+const adminLogin = (req, res) => {
+
+    const { username, password } = req.body;
+
+    const sql = `
+        SELECT * FROM admins
+        WHERE username = ?
+    `;
+
+    db.query(sql, [username], (err, results) => {
+
+        if (err) {
+            return res.status(500).json({
+                message: "Database Error"
+            });
+        }
+
+        if (results.length === 0) {
+            return res.status(401).json({
+                message: "Invalid Username"
+            });
+        }
+
+        const admin = results[0];
+
+        // Since your admin password is stored as plain text
+        if (admin.password !== password) {
+            return res.status(401).json({
+                message: "Invalid Password"
+            });
+        }
+
+        res.json({
+            message: "Admin Login Successful"
+        });
+
+    });
+
+};
 module.exports = {
     registerStudent,
-    loginStudent
+    loginStudent,
+    adminLogin
 };

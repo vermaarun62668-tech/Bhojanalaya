@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Complaint</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Page Under Development</h1>
+
+<div class="form-container">
+
+    <form id="complaintForm" class="form-card">
+
+        <h1>📝 Submit Complaint</h1>
+
+        <textarea
+            id="complaint_text"
+            placeholder="Write your complaint..."
+            rows="6"
+            required
+        ></textarea>
+
+        <label>
+            <input
+                type="checkbox"
+                id="anonymous"
+            >
+            Submit Anonymously
+        </label>
+
+        <button type="submit">
+            Submit Complaint
+        </button>
+
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/complaint.js"></script>
+
 </body>
 </html>

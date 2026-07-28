@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Rate Food</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Page Under Development</h1>
+
+<div class="form-container">
+
+    <form id="ratingForm" class="form-card">
+
+        <h1>⭐ Rate Today's Meal</h1>
+
+        <select id="meal_type" required>
+
+            <option value="">Select Meal</option>
+
+            <option value="Breakfast">Breakfast</option>
+
+            <option value="Lunch">Lunch</option>
+
+            <option value="Snacks">Snacks</option>
+
+            <option value="Dinner">Dinner</option>
+
+        </select>
+
+        <select id="rating" required>
+
+            <option value="">Select Rating</option>
+
+            <option value="1">1 ⭐</option>
+            <option value="2">2 ⭐⭐</option>
+            <option value="3">3 ⭐⭐⭐</option>
+            <option value="4">4 ⭐⭐⭐⭐</option>
+            <option value="5">5 ⭐⭐⭐⭐⭐</option>
+
+        </select>
+
+        <button type="submit">
+            Submit Rating
+        </button>
+
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/rating.js"></script>
+
 </body>
 </html>

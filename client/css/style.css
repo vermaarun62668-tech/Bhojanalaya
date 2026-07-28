@@ -1,3 +1,7 @@
+/* ==========================
+   GENERAL
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -5,125 +9,104 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-
 body{
-    background:red !important;
+    background:#F1F8E9;
+    color:#333;
 }
 
-body{
-
-    background:#f4f7fb;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    height:100vh;
-
-}
+/* ==========================
+   HOME PAGE
+========================== */
 
 .container{
-
     width:100%;
-
+    min-height:100vh;
     display:flex;
-
     justify-content:center;
-
+    align-items:center;
+    padding:30px;
 }
 
 .hero{
-
-    width:650px;
-
-    background:white;
-
+    width:700px;
+    background:#fff;
     padding:50px;
-
     border-radius:15px;
-
     text-align:center;
-
-    box-shadow:0px 5px 20px rgba(0,0,0,0.15);
-
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 .hero h1{
-
     font-size:45px;
-
-    color:#2563eb;
-
+    color:#2E7D32;
     margin-bottom:15px;
-
 }
 
 .hero h2{
-
-    color:#444;
-
+    color:#555;
     margin-bottom:20px;
-
 }
 
 .hero p{
-
     color:#666;
-
     line-height:28px;
-
     margin-bottom:35px;
-
 }
 
 .buttons{
-
     display:flex;
-
     justify-content:center;
-
     gap:20px;
-
+    flex-wrap:wrap;
 }
 
-.btn{
+/* ==========================
+   BUTTONS
+========================== */
 
-    text-decoration:none;
+.btn,
+button{
 
-    background:#2563eb;
-
+    background:#43A047;
     color:white;
-
-    padding:14px 35px;
-
+    text-decoration:none;
+    border:none;
+    padding:14px 30px;
     border-radius:8px;
-
-    transition:0.3s;
-
+    cursor:pointer;
+    font-size:16px;
     font-weight:bold;
+    transition:.3s;
 
 }
 
-.btn:hover{
+.btn:hover,
+button:hover{
 
-    background:#1d4ed8;
+    background:#2E7D32;
 
 }
 
 .register{
 
-    background:#16a34a;
+    background:#1976D2;
 
 }
 
 .register:hover{
 
-    background:#15803d;
+    background:#1565C0;
 
 }
+
+/* ==========================
+   FORMS
+========================== */
+
 .form-container{
+
+    width:100%;
+    min-height:100vh;
 
     display:flex;
 
@@ -131,21 +114,21 @@ body{
 
     align-items:center;
 
-    height:100vh;
+    padding:30px;
 
 }
 
 .form-card{
 
-    background:white;
+    width:430px;
 
-    width:420px;
+    background:white;
 
     padding:40px;
 
-    border-radius:12px;
+    border-radius:15px;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 
 }
 
@@ -153,7 +136,7 @@ body{
 
     text-align:center;
 
-    color:#2563eb;
+    color:#2E7D32;
 
     margin-bottom:10px;
 
@@ -163,13 +146,15 @@ body{
 
     text-align:center;
 
-    margin-bottom:25px;
+    color:#555;
 
-    color:#444;
+    margin-bottom:25px;
 
 }
 
-.form-card input{
+.form-card input,
+.form-card select,
+.form-card textarea{
 
     width:100%;
 
@@ -183,31 +168,19 @@ body{
 
     font-size:15px;
 
+    outline:none;
+
+}
+
+.form-card textarea{
+
+    resize:none;
+
 }
 
 .form-card button{
 
     width:100%;
-
-    padding:14px;
-
-    border:none;
-
-    background:#2563eb;
-
-    color:white;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-}
-
-.form-card button:hover{
-
-    background:#1d4ed8;
 
 }
 
@@ -221,44 +194,209 @@ body{
 
 .form-card a{
 
-    text-decoration:none;
+    color:#2E7D32;
 
-    color:#2563eb;
+    text-decoration:none;
 
     font-weight:bold;
 
 }
+
+.form-card label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.form-card input[type="checkbox"]{
+
+    width:18px;
+
+    height:18px;
+
+    margin:0;
+
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
 .dashboard{
-    width:700px;
-    margin:50px auto;
+
+    width:850px;
+
+    margin:40px auto;
+
     background:white;
+
     padding:40px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
 }
 
 .dashboard h1{
+
     text-align:center;
-    color:#2563eb;
-    margin-bottom:20px;
+
+    color:#2E7D32;
+
+    margin-bottom:25px;
+
 }
 
 .dashboard h2{
-    margin-bottom:25px;
-}
 
-.menu-card{
-    background:#f4f4f4;
-    padding:20px;
-    border-radius:10px;
-}
+    color:#444;
 
-.menu-card p{
-    margin:10px 0;
+    margin-bottom:20px;
+
 }
 
 .actions{
-    margin-top:30px;
+
     display:flex;
-    justify-content:space-between;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+/* ==========================
+   MENU CARD
+========================== */
+
+.menu-card{
+
+    background:#E8F5E9;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-top:20px;
+
+}
+
+.menu-card h3{
+
+    color:#2E7D32;
+
+    margin-bottom:20px;
+
+}
+
+.menu-card p{
+
+    margin:12px 0;
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   TABLES
+========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+table th{
+
+    background:#43A047;
+
+    color:white;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+}
+
+table td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+table tr:nth-child(even){
+
+    background:#F9F9F9;
+
+}
+
+table tr:hover{
+
+    background:#E8F5E9;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .hero{
+
+        width:95%;
+
+        padding:30px;
+
+    }
+
+    .dashboard{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+    .form-card{
+
+        width:95%;
+
+    }
+
+    .buttons,
+    .actions{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
 }
