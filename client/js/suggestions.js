@@ -3,7 +3,7 @@ async function loadSuggestions() {
     try {
 
         const response = await axios.get(
-            "http://localhost:5000/api/suggestions"
+            "/api/suggestions"
         );
 
         const suggestions = response.data;
@@ -26,7 +26,7 @@ async function loadSuggestions() {
 
         console.log(error);
 
-        alert("Unable to load suggestions.");
+        UI.showToast('error', 'Unable to load suggestions.');
 
     }
 

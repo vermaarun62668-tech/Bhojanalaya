@@ -3,7 +3,7 @@ async function loadRatings() {
     try {
 
         const response = await axios.get(
-    "http://localhost:5000/api/ratings"
+    "/api/ratings"
 );
         const ratings = response.data;
 
@@ -26,7 +26,7 @@ async function loadRatings() {
 
         console.log(error);
 
-        alert("Unable to load ratings.");
+        UI.showToast('error', 'Unable to load ratings.');
 
     }
 

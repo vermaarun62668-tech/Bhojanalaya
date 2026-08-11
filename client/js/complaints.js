@@ -3,7 +3,7 @@ async function loadComplaints() {
     try {
 
         const response = await axios.get(
-            "http://localhost:5000/api/complaints"
+            "/api/complaints"
         );
 
         const complaints = response.data;
@@ -28,7 +28,7 @@ async function loadComplaints() {
 
         console.log(error);
 
-        alert("Unable to load complaints.");
+        UI.showToast('error', 'Unable to load complaints.');
 
     }
 

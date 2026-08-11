@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <meta name="description" content="Register as a student on Bhojanalaya to rate meals and share feedback.">
+    <title>Register — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,21 +19,40 @@
         <h1>🍽️ Bhojanalaya</h1>
         <h2>Student Registration</h2>
 
-        <input type="text" id="name" placeholder="Full Name" required>
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <div class="input-error" id="nameError"></div>
+        </div>
 
-        <input type="email" id="email" placeholder="Email" required>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email address" required>
+            <div class="input-error" id="emailError"></div>
+        </div>
 
-        <input type="password" id="password" placeholder="Password" required>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="input-error" id="passwordError"></div>
+        </div>
 
-        <input type="text" id="hostel_block" placeholder="Hostel Block" required>
+        <div class="form-group">
+            <input type="text" id="hostel_block" placeholder="Hostel Block (e.g. Block-A)" required>
+            <div class="input-error" id="hostelError"></div>
+        </div>
 
-        <input type="text" id="room_number" placeholder="Room Number" required>
+        <div class="form-group">
+            <input type="text" id="room_number" placeholder="Room Number (e.g. 204)" required>
+            <div class="input-error" id="roomError"></div>
+        </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" id="registerBtn">Create Account</button>
 
         <p>
             Already have an account?
             <a href="login.html">Login</a>
+        </p>
+
+        <p>
+            <a href="index.html">← Back to Home</a>
         </p>
 
     </form>
@@ -39,6 +60,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/register.js"></script>
 
 </body>

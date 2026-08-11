@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <meta name="description" content="Admin login for Bhojanalaya mess management system.">
+    <title>Admin Login — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="admin-page">
 
 <div class="form-container">
 
     <form id="adminLoginForm" class="form-card">
 
-        <h1>👨‍💼 Admin Login</h1>
+        <h1>🛡️ Admin Login</h1>
+        <h2>Mess Management Portal</h2>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter Username"
-            required
-        >
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Admin Username" required>
+            <div class="input-error" id="usernameError"></div>
+        </div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter Password"
-            required
-        >
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="input-error" id="passwordError"></div>
+        </div>
 
-        <button type="submit">
-            Login
+        <button type="submit" id="adminLoginBtn">
+            Login as Admin
         </button>
 
         <p>
-            <a href="index.html">⬅ Back to Home</a>
+            <a href="index.html">← Back to Home</a>
         </p>
 
     </form>
@@ -42,6 +41,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/adminLogin.js"></script>
 
 </body>

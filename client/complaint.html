@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complaint</title>
+    <meta name="description" content="Submit a complaint about hostel mess food — Bhojanalaya.">
+    <title>Submit Complaint — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="form-container">
+    <header class="site-header">
+        <a class="brand" href="index.html">🍽️ Bhojanalaya</a>
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="rating.html">Rate Food</a>
+            <a href="complaint.html">Complaint</a>
+            <a href="suggestion.html">Suggest</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
 
     <form id="complaintForm" class="form-card">
 
         <h1>📝 Submit Complaint</h1>
+        <h2>We're listening — tell us what's wrong</h2>
 
-        <textarea
-            id="complaint_text"
-            placeholder="Write your complaint..."
-            rows="6"
-            required
-        ></textarea>
+        <div class="form-group">
+            <textarea id="complaint_text" placeholder="Describe your complaint in detail..." rows="6" required></textarea>
+            <div class="input-error" id="complaintError"></div>
+        </div>
 
-        <label>
-            <input
-                type="checkbox"
-                id="anonymous"
-            >
-            Submit Anonymously
-        </label>
+        <div class="form-group">
+            <label><input type="checkbox" id="anonymous"> Submit Anonymously</label>
+        </div>
 
-        <button type="submit">
-            Submit Complaint
-        </button>
+        <button type="submit" id="complaintBtn">Submit Complaint</button>
+
+        <p>
+            <a href="dashboard.html">← Back to Dashboard</a>
+        </p>
 
     </form>
 
-</div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/complaint.js"></script>
 
 </body>

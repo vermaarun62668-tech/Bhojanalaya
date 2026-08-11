@@ -3,7 +3,7 @@ async function loadMenu() {
     try {
 
         const response = await axios.get(
-            "http://localhost:5000/api/menu/today"
+            "/api/menu/today"
         );
 
         const menu = response.data;
@@ -17,7 +17,7 @@ async function loadMenu() {
 
         console.log(error);
 
-        alert("Unable to load today's menu.");
+        UI.showToast('error', "Unable to load today's menu.");
 
     }
 

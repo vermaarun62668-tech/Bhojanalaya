@@ -1,27 +1,34 @@
-document.getElementById("adminLoginForm").addEventListener("submit", async (e) => {
+const _adminLoginForm = document.getElementById("adminLoginForm");
+if(_adminLoginForm){
+    _adminLoginForm.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const admin = {
-        username: document.getElementById("username").value,
-        password: document.getElementById("password").value
-    };
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const btn = document.getElementById('adminLoginBtn');
 
-    try {
+        try {
+            UI.setLoading(btn, true, 'Logging in...');
 
-        const response = await axios.post(
-            "http://localhost:5000/api/auth/admin/login",
-            admin
-        );
+            const admin = { username: username.value, password: password.value };
 
-        alert(response.data.message);
+            const response = await axios.post(
+                "/api/auth/admin/login",
+                admin
+            );
 
-        window.location.href = "adminDashboard.html";
+            UI.showToast('success', response.data.message);
 
-    } catch (error) {
+            setTimeout(()=> window.location.href = "adminDashboard.html", 700);
 
-        alert("Invalid Username or Password");
+        } catch (error) {
 
-    }
+            UI.showToast('error', 'Invalid Username or Password');
 
-});
+        } finally {
+            UI.setLoading(btn, false);
+        }
+
+    });
+}

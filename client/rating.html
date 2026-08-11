@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rate Food</title>
+    <meta name="description" content="Rate today's meal — Bhojanalaya hostel mess feedback.">
+    <title>Rate Food — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="form-container">
+    <header class="site-header">
+        <a class="brand" href="index.html">🍽️ Bhojanalaya</a>
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="rating.html">Rate Food</a>
+            <a href="complaint.html">Complaint</a>
+            <a href="suggestion.html">Suggest</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
 
     <form id="ratingForm" class="form-card">
 
         <h1>⭐ Rate Today's Meal</h1>
+        <h2>How was the food?</h2>
 
-        <select id="meal_type" required>
+        <div class="form-group">
+            <select id="meal_type" required>
+                <option value="">Select Meal</option>
+                <option value="Breakfast">🌅 Breakfast</option>
+                <option value="Lunch">☀️ Lunch</option>
+                <option value="Snacks">🍪 Snacks</option>
+                <option value="Dinner">🌙 Dinner</option>
+            </select>
+            <div class="input-error" id="mealError"></div>
+        </div>
 
-            <option value="">Select Meal</option>
+        <div class="form-group">
+            <select id="rating" required>
+                <option value="">Select Rating</option>
+                <option value="1">1 ⭐</option>
+                <option value="2">2 ⭐⭐</option>
+                <option value="3">3 ⭐⭐⭐</option>
+                <option value="4">4 ⭐⭐⭐⭐</option>
+                <option value="5">5 ⭐⭐⭐⭐⭐</option>
+            </select>
+            <div class="input-error" id="ratingError"></div>
+        </div>
 
-            <option value="Breakfast">Breakfast</option>
+        <button type="submit" id="ratingBtn">Submit Rating</button>
 
-            <option value="Lunch">Lunch</option>
-
-            <option value="Snacks">Snacks</option>
-
-            <option value="Dinner">Dinner</option>
-
-        </select>
-
-        <select id="rating" required>
-
-            <option value="">Select Rating</option>
-
-            <option value="1">1 ⭐</option>
-            <option value="2">2 ⭐⭐</option>
-            <option value="3">3 ⭐⭐⭐</option>
-            <option value="4">4 ⭐⭐⭐⭐</option>
-            <option value="5">5 ⭐⭐⭐⭐⭐</option>
-
-        </select>
-
-        <button type="submit">
-            Submit Rating
-        </button>
+        <p>
+            <a href="dashboard.html">← Back to Dashboard</a>
+        </p>
 
     </form>
 
-</div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/rating.js"></script>
 
 </body>

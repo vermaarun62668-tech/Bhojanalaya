@@ -4,32 +4,40 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const student = {
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value
-    };
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const btn = document.getElementById('loginBtn');
+
+    UI.clearFieldError(email);
+    UI.clearFieldError(password);
+
+    if(!email.value.trim()){ UI.showFieldError(email, 'Email is required'); return; }
+    if(!password.value.trim()){ UI.showFieldError(password, 'Password is required'); return; }
+
+    const student = { email: email.value, password: password.value };
 
     try {
+        UI.setLoading(btn, true, 'Logging in...');
 
         const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            "/api/auth/login",
             student
         );
 
-        alert(response.data.message);
+        UI.showToast('success', response.data.message);
 
         localStorage.setItem("token", response.data.token);
 
-        window.location.href = "dashboard.html";
+        setTimeout(()=> window.location.href = "dashboard.html", 700);
 
     } catch (error) {
-
         if (error.response) {
-            alert(error.response.data.message);
+            UI.showToast('error', error.response.data.message || 'Login failed');
         } else {
-            alert("Server not running.");
+            UI.showToast('error', 'Server not running.');
         }
-
+    } finally {
+        UI.setLoading(btn, false);
     }
 
 });

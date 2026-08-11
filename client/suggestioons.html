@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Suggestions</title>
+    <meta name="description" content="View all student food suggestions — Bhojanalaya mess feedback.">
+    <title>Suggestions — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="admin-page">
 
-<div class="form-container">
+    <header class="site-header">
+        <a class="brand" href="index.html">🛡️ Bhojanalaya Admin</a>
+        <nav class="nav">
+            <a href="adminDashboard.html">Dashboard</a>
+            <a href="menu.html">Update Menu</a>
+            <a href="ratings.html">Ratings</a>
+            <a href="complaints.html">Complaints</a>
+            <a href="suggestioons.html">Suggestions</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
 
-    <div class="form-card">
+    <div class="container">
+
+    <div class="table-card">
 
         <h1>💡 Student Suggestions</h1>
 
-        <table border="1" width="100%" id="suggestionTable">
+        <table id="suggestionTable">
 
             <thead>
                 <tr>
@@ -36,6 +50,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/suggestions.js"></script>
 
 </body>

@@ -1,32 +1,45 @@
-document.getElementById("ratingForm").addEventListener("submit", async (e) => {
+const _ratingForm = document.getElementById("ratingForm");
+if(_ratingForm){
+    _ratingForm.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const meal_type = document.getElementById("meal_type").value;
-    const rating = document.getElementById("rating").value;
+        const meal_type = document.getElementById("meal_type");
+        const rating = document.getElementById("rating");
+        const btn = document.getElementById('ratingBtn');
 
-    try {
+        UI.clearFieldError(meal_type);
+        UI.clearFieldError(rating);
 
-        const response = await axios.post(
-            "http://localhost:5000/api/ratings",
-            {
-                student_id: 1,
-                menu_id: 1,
-                meal_type,
-                rating
-            }
-        );
+        if(!meal_type.value){ UI.showFieldError(meal_type, 'Please select a meal type'); return; }
+        if(!rating.value){ UI.showFieldError(rating, 'Please select a rating'); return; }
 
-        alert(response.data.message);
+        try {
+            UI.setLoading(btn, true, 'Submitting...');
 
-        document.getElementById("ratingForm").reset();
+            const response = await axios.post(
+                "/api/ratings",
+                {
+                    student_id: 1,
+                    menu_id: 1,
+                    meal_type: meal_type.value,
+                    rating: rating.value
+                }
+            );
 
-    } catch (error) {
+            UI.showToast('success', response.data.message);
 
-        console.log(error);
+            document.getElementById("ratingForm").reset();
 
-        alert("Rating submission failed.");
+        } catch (error) {
 
-    }
+            console.log(error);
 
-});
+            UI.showToast('error', 'Rating submission failed.');
+
+        } finally {
+            UI.setLoading(btn, false);
+        }
+
+    });
+}

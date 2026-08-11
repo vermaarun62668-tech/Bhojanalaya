@@ -1,31 +1,45 @@
-document.getElementById("complaintForm").addEventListener("submit", async (e) => {
+const _complaintForm = document.getElementById("complaintForm");
+if(_complaintForm){
+    _complaintForm.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const complaint = {
-        student_id: 1,
-        menu_id: 1,
-        complaint_text: document.getElementById("complaint_text").value,
-        is_anonymous: document.getElementById("anonymous").checked
-    };
+        const text = document.getElementById("complaint_text");
+        const anon = document.getElementById("anonymous");
+        const btn = document.getElementById('complaintBtn');
 
-    try {
+        UI.clearFieldError(text);
 
-        const response = await axios.post(
-            "http://localhost:5000/api/complaints",
-            complaint
-        );
+        if(!text.value.trim()){ UI.showFieldError(text, 'Please enter your complaint'); return; }
 
-        alert(response.data.message);
+        const complaint = {
+            student_id: 1,
+            menu_id: 1,
+            complaint_text: text.value,
+            is_anonymous: anon.checked
+        };
 
-        document.getElementById("complaintForm").reset();
+        try {
+            UI.setLoading(btn, true, 'Submitting...');
 
-    } catch (error) {
+            const response = await axios.post(
+                "/api/complaints",
+                complaint
+            );
 
-        console.log(error);
+            UI.showToast('success', response.data.message);
 
-        alert("Complaint submission failed.");
+            document.getElementById("complaintForm").reset();
 
-    }
+        } catch (error) {
 
-});
+            console.log(error);
+
+            UI.showToast('error', 'Complaint submission failed.');
+
+        } finally {
+            UI.setLoading(btn, false);
+        }
+
+    });
+}

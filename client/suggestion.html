@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Suggestion</title>
+    <meta name="description" content="Suggest new food items for the hostel mess — Bhojanalaya.">
+    <title>Suggest Menu — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="form-container">
+    <header class="site-header">
+        <a class="brand" href="index.html">🍽️ Bhojanalaya</a>
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="rating.html">Rate Food</a>
+            <a href="complaint.html">Complaint</a>
+            <a href="suggestion.html">Suggest</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
 
     <form id="suggestionForm" class="form-card">
 
         <h1>💡 Suggest a Menu</h1>
+        <h2>What would you love to see on the menu?</h2>
 
-        <textarea
-            id="suggestion_text"
-            rows="6"
-            placeholder="Suggest a new food item..."
-            required
-        ></textarea>
+        <div class="form-group">
+            <textarea id="suggestion_text" rows="6" placeholder="Describe your food suggestion..." required></textarea>
+            <div class="input-error" id="suggestionError"></div>
+        </div>
 
-        <button type="submit">
-            Submit Suggestion
-        </button>
+        <button type="submit" id="suggestionBtn">Submit Suggestion</button>
+
+        <p>
+            <a href="dashboard.html">← Back to Dashboard</a>
+        </p>
 
     </form>
 
-</div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/suggestion.js"></script>
 
 </body>

@@ -1,33 +1,34 @@
-document.getElementById("menuForm").addEventListener("submit", async (e) => {
+const _menuForm = document.getElementById("menuForm");
+if(_menuForm){
+    _menuForm.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const menu = {
+        const menu = {
+            breakfast: document.getElementById("breakfast").value,
+            lunch: document.getElementById("lunch").value,
+            snacks: document.getElementById("snacks").value,
+            dinner: document.getElementById("dinner").value
+        };
 
-        breakfast: document.getElementById("breakfast").value,
-        lunch: document.getElementById("lunch").value,
-        snacks: document.getElementById("snacks").value,
-        dinner: document.getElementById("dinner").value
+        try {
 
-    };
+            const response = await axios.put(
+                "/api/admin/menu",
+                menu
+            );
 
-    try {
+            UI.showToast('success', response.data.message);
 
-        const response = await axios.put(
-            "http://localhost:5000/api/admin/menu",
-            menu
-        );
+            document.getElementById("menuForm").reset();
 
-        alert(response.data.message);
+        } catch (error) {
 
-        document.getElementById("menuForm").reset();
+            console.log(error);
 
-    } catch (error) {
+            UI.showToast('error', 'Menu update failed.');
 
-        console.log(error);
+        }
 
-        alert("Menu update failed.");
-
-    }
-
-});
+    });
+}

@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Menu</title>
+    <meta name="description" content="Update today's hostel mess menu — Bhojanalaya admin.">
+    <title>Update Menu — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="admin-page">
 
-<div class="form-container">
+    <header class="site-header">
+        <a class="brand" href="index.html">🛡️ Bhojanalaya Admin</a>
+        <nav class="nav">
+            <a href="adminDashboard.html">Dashboard</a>
+            <a href="menu.html">Update Menu</a>
+            <a href="ratings.html">Ratings</a>
+            <a href="complaints.html">Complaints</a>
+            <a href="suggestioons.html">Suggestions</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
 
     <form id="menuForm" class="form-card">
 
         <h1>🍽 Update Today's Menu</h1>
+        <h2>Set the meals for today</h2>
 
-        <input
-            type="text"
-            id="breakfast"
-            placeholder="Breakfast"
-            required
-        >
+        <div class="form-group">
+            <input type="text" id="breakfast" placeholder="🌅 Breakfast (e.g. Poha, Tea)" required>
+        </div>
 
-        <input
-            type="text"
-            id="lunch"
-            placeholder="Lunch"
-            required
-        >
+        <div class="form-group">
+            <input type="text" id="lunch" placeholder="☀️ Lunch (e.g. Dal, Rice, Sabji)" required>
+        </div>
 
-        <input
-            type="text"
-            id="snacks"
-            placeholder="Snacks"
-            required
-        >
+        <div class="form-group">
+            <input type="text" id="snacks" placeholder="🍪 Snacks (e.g. Samosa, Chai)" required>
+        </div>
 
-        <input
-            type="text"
-            id="dinner"
-            placeholder="Dinner"
-            required
-        >
+        <div class="form-group">
+            <input type="text" id="dinner" placeholder="🌙 Dinner (e.g. Roti, Paneer)" required>
+        </div>
 
         <button type="submit">
             Update Menu
         </button>
 
+        <p>
+            <a href="adminDashboard.html">← Back to Dashboard</a>
+        </p>
+
     </form>
 
-</div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/menu.js"></script>
 
 </body>

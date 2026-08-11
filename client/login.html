@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Login</title>
+    <meta name="description" content="Student login for Bhojanalaya mess feedback system.">
+    <title>Student Login — Bhojanalaya</title>
 
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,21 +19,17 @@
         <h1>🍽️ Bhojanalaya</h1>
         <h2>Student Login</h2>
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            required
-        >
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email address" required>
+            <div class="input-error" id="emailError"></div>
+        </div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-        >
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="input-error" id="passwordError"></div>
+        </div>
 
-        <button type="submit">
+        <button type="submit" id="loginBtn">
             Login
         </button>
 
@@ -40,12 +38,17 @@
             <a href="register.html">Register</a>
         </p>
 
+        <p>
+            <a href="index.html">← Back to Home</a>
+        </p>
+
     </form>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<script src="js/ui.js"></script>
 <script src="js/login.js"></script>
 
 </body>
